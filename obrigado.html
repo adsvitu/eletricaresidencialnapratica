@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição Confirmada | Elétrica Residencial na Prática</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .thanks-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(10, 15, 30, 0.9), rgba(10, 15, 30, 0.95)), url('img/nccurso.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .thanks-card {
+            max-width: 600px;
+            width: 100%;
+        }
+        .check-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--success);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 2rem;
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+        }
+        .next-steps {
+            margin: 3rem 0;
+            text-align: left;
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 2px;
+            border-left: 4px solid var(--accent);
+        }
+        .next-steps h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        .next-steps ul li {
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="thanks-container">
+        <div class="thanks-card reveal active">
+            <div class="check-icon">✓</div>
+            <h1 style="margin-bottom: 1rem;">Inscrição Confirmada!</h1>
+            <p class="text-secondary" style="font-size: 1.25rem;">Parabéns! Você acaba de garantir sua vaga na formação que vai transformar sua carreira na elétrica residencial.</p>
+
+            <div class="next-steps">
+                <h3>Próximos passos:</h3>
+                <ul>
+                    <li>✅ Você receberá um e-mail com os detalhes do curso.</li>
+                    <li>✅ Nossa equipe entrará em contato via WhatsApp em breve.</li>
+                    <li>✅ Prepare suas ferramentas e sua vontade de aprender!</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <p style="margin-bottom: 1.5rem; font-weight: 700;">Dica: Entre no grupo exclusivo de alunos no WhatsApp.</p>
+                <a href="https://wa.me/[WHATSAPP_GROUP_LINK]" class="btn-primary" style="width: 100%;">Entrar no Grupo de Alunos</a>
+            </div>
+
+            <a href="index.html" class="text-secondary" style="text-decoration: underline;">Voltar para o site</a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
