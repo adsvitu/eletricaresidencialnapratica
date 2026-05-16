@@ -84,4 +84,34 @@ document.addEventListener('DOMContentLoaded', () => {
             popup.style.display = 'none';
         }
     });
+
+    // UTM Propagation Logic
+    const captureAndPropagateUTMs = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'src'];
+        const foundParams = {};
+
+        utms.forEach(param => {
+            const value = urlParams.get(param);
+            if (value) {
+                foundParams[param] = value;
+            }
+        });
+
+        if (Object.keys(foundParams).length > 0) {
+            // Find all checkout links
+            const checkoutLinks = document.querySelectorAll('a[href*="checkout.infinitepay.io"]');
+            
+            checkoutLinks.forEach(link => {
+                const url = new URL(link.href);
+                for (const [key, value] of Object.entries(foundParams)) {
+                    url.searchParams.set(key, value);
+                }
+                link.href = url.toString();
+            });
+            console.log('UTMs propagated to checkout links:', foundParams);
+        }
+    };
+
+    captureAndPropagateUTMs();
 });
