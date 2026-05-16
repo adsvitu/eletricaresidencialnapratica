@@ -114,4 +114,20 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     captureAndPropagateUTMs();
+
+    // Event Tracking Logic
+    const trackInitiateCheckout = () => {
+        const checkoutLinks = document.querySelectorAll('a[href*="checkout.infinitepay.io"]');
+        
+        checkoutLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'InitiateCheckout');
+                    console.log('Meta Pixel: InitiateCheckout event tracked');
+                }
+            });
+        });
+    };
+
+    trackInitiateCheckout();
 });
