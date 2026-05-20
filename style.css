@@ -443,12 +443,14 @@ details div {
     animation: float 6s ease-in-out infinite;
 }
 
-.smartphone-mockup iframe {
+.smartphone-mockup iframe,
+.smartphone-mockup video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border: none;
 }
 
