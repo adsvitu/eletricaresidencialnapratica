@@ -130,4 +130,36 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     trackInitiateCheckout();
+
+    // Force Autoplay for Hero Video
+    const forceVideoAutoplay = () => {
+        const video = document.getElementById('hero-video');
+        if (video) {
+            video.muted = true;
+            video.playsInline = true;
+            
+            // Try playing immediately
+            video.play().catch(err => {
+                console.log("Muted autoplay blocked initially, waiting for user gesture...", err);
+            });
+
+            // Fallback for strict browser policies: play on first user interaction
+            const playOnGesture = () => {
+                if (video.paused) {
+                    video.play().catch(err => console.log("Failed to play on gesture:", err));
+                }
+                // Remove listeners to avoid memory leak and unnecessary calls
+                document.removeEventListener('click', playOnGesture);
+                document.removeEventListener('touchstart', playOnGesture);
+                document.removeEventListener('scroll', playOnGesture);
+            };
+
+            document.addEventListener('click', playOnGesture);
+            document.addEventListener('touchstart', playOnGesture);
+            document.addEventListener('scroll', playOnGesture);
+        }
+    };
+
+    forceVideoAutoplay();
 });
+
