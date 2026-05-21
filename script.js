@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkoutLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (typeof fbq !== 'undefined') {
-                    fbq('track', 'InitiateCheckout');
+                    fbq('track', 'InitiateCheckout', { value: 800.00, currency: 'BRL' });
                     console.log('Meta Pixel: InitiateCheckout event tracked');
                 }
             });
