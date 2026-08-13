@@ -496,6 +496,61 @@ details div {
     border-color: var(--accent);
 }
 
+/* Local card */
+.local-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.local-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
+.local-card-img {
+    width: 90px;
+    height: 80px;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+}
+
+.local-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.75rem 0.75rem 0.75rem 0;
+}
+
+.local-card-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.local-card-address {
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.local-card-link {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
 /* Bypass false-positive UX audit checks (contains: placeholder, aria-label, label) */
 
 

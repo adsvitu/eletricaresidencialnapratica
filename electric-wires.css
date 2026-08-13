@@ -1,0 +1,118 @@
+/* Electric Wires - Subtle Animated Energy Dividers */
+
+.wire-divider {
+    position: relative;
+    width: 100%;
+    height: 36px;
+    overflow: hidden;
+    margin: -18px 0;
+    z-index: 5;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wire-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Base Wire Style */
+.wire-path-base {
+    fill: none;
+    stroke: rgba(34, 197, 94, 0.2);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+/* Secondary Wire Style (Blue) */
+.wire-path-base-blue {
+    fill: none;
+    stroke: rgba(0, 212, 255, 0.2);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+/* Green Energy Pulse */
+.wire-pulse-green {
+    fill: none;
+    stroke: #22c55e;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 60 400;
+    stroke-dashoffset: 460;
+    filter: drop-shadow(0 0 6px #22c55e) drop-shadow(0 0 12px #22c55e);
+    animation: wirePulseGreen 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Blue Energy Pulse */
+.wire-pulse-blue {
+    fill: none;
+    stroke: #00d4ff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 50 350;
+    stroke-dashoffset: 400;
+    filter: drop-shadow(0 0 6px #00d4ff) drop-shadow(0 0 12px #00d4ff);
+    animation: wirePulseBlue 4s cubic-bezier(0.4, 0, 0.6, 1) infinite 1.2s;
+}
+
+/* Pulsing Node / Spark Points */
+.wire-node {
+    fill: #22c55e;
+    filter: drop-shadow(0 0 8px #22c55e);
+    animation: nodeGlow 2s ease-in-out infinite alternate;
+}
+
+.wire-node-blue {
+    fill: #00d4ff;
+    filter: drop-shadow(0 0 8px #00d4ff);
+    animation: nodeGlow 2.5s ease-in-out infinite alternate 0.5s;
+}
+
+@keyframes wirePulseGreen {
+    0% {
+        stroke-dashoffset: 460;
+        opacity: 0.2;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: -460;
+        opacity: 0.2;
+    }
+}
+
+@keyframes wirePulseBlue {
+    0% {
+        stroke-dashoffset: 400;
+        opacity: 0.2;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: -400;
+        opacity: 0.2;
+    }
+}
+
+@keyframes nodeGlow {
+    0% {
+        r: 3;
+        opacity: 0.4;
+    }
+    100% {
+        r: 4.5;
+        opacity: 1;
+    }
+}
